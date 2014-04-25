@@ -11,12 +11,31 @@ class LinkedList
   attr_accessor :head
 
   def append(value)
+    if @head
+      last_node.next_node = Node.new(value)
+    else
+      @head = Node.new(value)
+    end
+  end
+
+  def last_node
+    node = @head
+    until node.next_node.nil?
+      node = node.next_node
+    end
+    node
   end
 
   def get(index)
+    node = @head
+    index.times do 
+      node = node.next_node 
+    end
+    node.value
   end
 
   def prepend(value)
+    @head = Node.new(value, head)
   end
 
   def insert_before(index, value)

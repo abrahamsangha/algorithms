@@ -16,13 +16,13 @@ describe LinkedList do
   end
 
   describe("#prepend") do
-    xit 'prepends nodes to an empty list' do
+    it 'prepends nodes to an empty list' do
       list = LinkedList.new
       list.prepend(0)
       expect(list.head.value).to eq 0
     end
 
-    xit 'prepends multiple nodes' do
+    it 'prepends multiple nodes' do
       list = LinkedList.new
       list.prepend(1)
       list.prepend(0)
@@ -32,7 +32,7 @@ describe LinkedList do
   end
 
   describe("#get") do
-    xit 'gets the value at index n' do
+    it 'gets the value at index n' do
       list = LinkedList.new
       list.prepend(:c)
       list.prepend(:b)
@@ -44,13 +44,13 @@ describe LinkedList do
   end
 
   describe("#append") do
-    xit 'appends a node to empty list' do
+    it 'appends a node to empty list' do
       list = LinkedList.new
       list.append(1)
       expect(list.head.value).to eq 1
     end
 
-    xit 'appends multiple nodes' do
+    it 'appends multiple nodes' do
       list = LinkedList.new
       list.append(1)
       list.append(2)
