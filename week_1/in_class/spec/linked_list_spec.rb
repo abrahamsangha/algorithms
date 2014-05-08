@@ -61,7 +61,7 @@ describe LinkedList do
 
 
   describe("#insert_before") do
-    xit 'inserts into the middle of a list' do
+    it 'inserts into the middle of a list' do
       list = LinkedList.new
       list.prepend(:end)
       list.prepend(:start)
@@ -71,7 +71,7 @@ describe LinkedList do
       expect(list.head.next_node.next_node.value).to eq :end
     end
 
-    xit 'inserts into the beginning of a list' do
+    it 'inserts into the beginning of a list' do
       list = LinkedList.new
       list.prepend(:initial_start)
       list.insert_before(0, :new_start)
@@ -79,7 +79,7 @@ describe LinkedList do
       expect(list.head.next_node.value).to eq :initial_start
     end
 
-    xit 'fails to insert when out of bounds' do
+    it 'fails to insert when out of bounds' do
       list = LinkedList.new
       expect { list.insert_before(100, :value) }.to raise_error("Out Of Bounds")
     end
